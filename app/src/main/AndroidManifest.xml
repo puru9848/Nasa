@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".APODActivity"
+        <activity android:name=".ui.APODActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.TodayAPODActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.ViewFavorite"
             android:screenOrientation="portrait"/>
     </application>
 
