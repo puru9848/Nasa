@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.nasa.R;
-import com.squareup.picasso.Picasso;
 
 import static com.example.nasa.Constant.DATE;
 import static com.example.nasa.Constant.EXPLANATION;
@@ -53,12 +53,11 @@ public class TodayAPODActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getSharedPreferences(MY_SHAREPREF, MODE_PRIVATE);
 
-                // Creating an Editor object to edit(write to the file)
                 SharedPreferences.Editor myEdit = sharedPreferences.edit();
-
-                // Storing the key and its value as the data fetched from edittext
                 myEdit.putString("date", apodResponseDate);
                 myEdit.putString("title", title);
+                myEdit.putString("nasaImage", nasaImage);
+                myEdit.putString("explanation", explanation);
                 myEdit.commit();
             }
         });
@@ -69,7 +68,7 @@ public class TodayAPODActivity extends AppCompatActivity {
     private void showDataOnUI() {
         date.setText(apodResponseDate);
         titleTV.setText(title);
-        Picasso.with(this).load(nasaImage).into(imageView);
+        Glide.with(this).load(nasaImage).into(imageView);
         explanationTV.setText(explanation);
     }
 }

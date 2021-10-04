@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -115,8 +118,18 @@ public class MainActivity extends AppCompatActivity {
         todayApodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.todayAPODCall(todayDate);
-                showLoadingDialog();
+                if (todayDate != null){
+                    viewModel.todayAPODCall(todayDate);
+                    showLoadingDialog();
+
+                }
+                else {
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("Choose Date")
+                            .setIcon(R.drawable.ic_baseline_close_24 )
+                            .setMessage("Please choose search date from Calendar....")
+                            .show();                }
+
             }
         });
 

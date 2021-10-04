@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.nasa.ApodClient;
 import com.example.nasa.MBServices;
 import com.example.nasa.R;
@@ -76,7 +77,8 @@ public class APODActivity extends AppCompatActivity {
     private void showDataOnUI(String apodResponseDate) {
         date.setText(apodResponseDate);
         titleTV.setText(title);
-        Picasso.with(this).load(nasaImage).into(imageView);
+        Glide.with(this).load(nasaImage).into(imageView);
+
         explanationTV.setText(explanation);
     }
 }

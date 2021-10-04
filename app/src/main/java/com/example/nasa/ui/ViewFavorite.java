@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.nasa.R;
 import com.squareup.picasso.Picasso;
 
@@ -35,7 +36,7 @@ public class ViewFavorite  extends AppCompatActivity {
 
         dateTv.setText(date);
         titleTv.setText(title);
-        Picasso.with(this).load(nasaImage).into(nasaImageView);
+        Glide.with(this).load(nasaImage).into(nasaImageView);
         explanationTV.setText(explanation);
 
 
