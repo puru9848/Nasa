@@ -1,10 +1,9 @@
 package com.example.nasa.network;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
-import com.example.nasa.ApodClient;
+
 import com.example.nasa.MBServices;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
